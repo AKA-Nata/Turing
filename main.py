@@ -239,6 +239,46 @@ if __name__ == "__main__":
     scheduler.WeatherStats(); time.sleep(0.25)
     scheduler.PingStats(); time.sleep(0.25)
 
+    # >>> CODEX SHARK OVERLAY >>>
+    try:
+        from codex_shark import start_shark_overlay
+        start_shark_overlay()
+    except Exception as e:
+        logger.warning("Codex Shark could not start: %s" % str(e))
+    # <<< CODEX SHARK OVERLAY <<<
+
+    # >>> CODEX GATOR OVERLAY >>>
+    try:
+        from codex_gator import start_gator_overlay
+        start_gator_overlay()
+    except Exception as e:
+        logger.warning("Codex Gator could not start: %s" % str(e))
+    # <<< CODEX GATOR OVERLAY <<<
+
+    # >>> CODEX COW OVERLAY >>>
+    try:
+        from codex_cow import start_cow_overlay
+        start_cow_overlay()
+    except Exception as e:
+        logger.warning("Codex Cow could not start: %s" % str(e))
+    # <<< CODEX COW OVERLAY <<<
+
+    # >>> CODEX DINO OVERLAY >>>
+    try:
+        from codex_dino import start_dino_overlay
+        start_dino_overlay()
+    except Exception as e:
+        logger.warning("Codex Dino could not start: %s" % str(e))
+    # <<< CODEX DINO OVERLAY <<<
+
+    # >>> CODEX DUCK OVERLAY >>>
+    try:
+        from codex_duck import start_duck_overlay
+        start_duck_overlay()
+    except Exception as e:
+        logger.warning("Codex Duck could not start: %s" % str(e))
+    # <<< CODEX DUCK OVERLAY <<<
+
     # OS-specific tasks
     if tray_icon and platform.system() == "Darwin":  # macOS-specific
         from AppKit import NSBundle, NSApp, NSApplicationActivationPolicyProhibited
